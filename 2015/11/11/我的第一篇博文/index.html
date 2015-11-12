@@ -1,0 +1,512 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN" xmlns:wb="http://open.weibo.com/wb">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>我的第一篇博文 | 撒金武的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="sandy">
+    
+    <meta name="description" content="我的第一篇博文第一篇博文主要干三件事
+记一下博客平台的搭建过程
+说说有了博客以后要干什么
+markdown语法范例
+
+
+记一下博客平台的搭建过程
+安装
+
+前提是必须先安装 Node.js
+
+$: npm install hexo -g
+
+仅需一步就把 Hexo 本体和所有相依套件安装完毕，很简单吧？">
+    
+    
+    
+    
+    <link rel="alternate" href="atom.xml" title="撒金武的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="撒金武的博客">撒金武的博客</a></h1>
+				<h2 class="blog-motto">历经千辛万苦，踏遍万水千山，终于搭建起了自己的微博系统，主要是为了好玩，以后会将开发中的一些心得体会及看到的别人写的好的东西一并发上来，当笔记用，看到了就说明有缘，欢迎指正错误</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">文章</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+						<li><a href="/atom.xml">RSS订阅</a></li>
+					
+					<li>
+					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="30" placeholder="搜索" />
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/11/11/我的第一篇博文/" title="我的第一篇博文" itemprop="url">我的第一篇博文</a>
+  </h1>
+  <!-- 显示作者
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="sandy">sandy</a>
+    </p>
+  -->  
+  <p class="article-time">
+    <time datetime="2015-11-11T12:04:24.000Z" itemprop="datePublished">2015-11-11</time>
+    更新日期:<time datetime="2015-11-12T05:24:20.000Z" itemprop="dateModified">2015-11-12</time>
+    
+  </p>
+</header>
+
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#我的第一篇博文"><span class="toc-number">1.</span> <span class="toc-text">我的第一篇博文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一篇博文主要干三件事"><span class="toc-number">1.1.</span> <span class="toc-text">第一篇博文主要干三件事</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#记一下博客平台的搭建过程"><span class="toc-number">1.1.1.</span> <span class="toc-text">记一下博客平台的搭建过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如果你想发布到github上呢"><span class="toc-number">1.1.2.</span> <span class="toc-text">如果你想发布到github上呢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有了博客我要干什么"><span class="toc-number">1.1.3.</span> <span class="toc-text">有了博客我要干什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#markdown语法范例"><span class="toc-number">1.1.4.</span> <span class="toc-text">markdown语法范例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一级标题"><span class="toc-number">2.</span> <span class="toc-text">一级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#二级标题"><span class="toc-number">2.1.</span> <span class="toc-text">二级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#六级标题"><span class="toc-number">2.1.0.0.0.1.</span> <span class="toc-text">六级标题</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown简介"><span class="toc-number">2.2.</span> <span class="toc-text">Markdown简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码块"><span class="toc-number">2.2.1.</span> <span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LaTeX_公式"><span class="toc-number">2.2.2.</span> <span class="toc-text">LaTeX 公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表格"><span class="toc-number">2.2.3.</span> <span class="toc-text">表格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#流程图"><span class="toc-number">2.2.4.</span> <span class="toc-text">流程图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复选框"><span class="toc-number">2.2.5.</span> <span class="toc-text">复选框</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#印象笔记相关"><span class="toc-number">2.3.</span> <span class="toc-text">印象笔记相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#笔记本和标签"><span class="toc-number">2.3.1.</span> <span class="toc-text">笔记本和标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#笔记标题"><span class="toc-number">2.3.2.</span> <span class="toc-text">笔记标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快捷编辑"><span class="toc-number">2.3.3.</span> <span class="toc-text">快捷编辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据同步"><span class="toc-number">2.3.4.</span> <span class="toc-text">数据同步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#离线存储"><span class="toc-number">2.3.5.</span> <span class="toc-text">离线存储</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编辑器相关"><span class="toc-number">2.4.</span> <span class="toc-text">编辑器相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#设置"><span class="toc-number">2.4.1.</span> <span class="toc-text">设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快捷键"><span class="toc-number">2.4.2.</span> <span class="toc-text">快捷键</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于收费"><span class="toc-number">2.5.</span> <span class="toc-text">关于收费</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反馈与建议"><span class="toc-number">2.6.</span> <span class="toc-text">反馈与建议</span></a></li></ol></li></ol>
+		</div>
+		
+		<h1 id="我的第一篇博文">我的第一篇博文</h1><h2 id="第一篇博文主要干三件事">第一篇博文主要干三件事</h2><ul>
+<li><strong>记一下博客平台的搭建过程</strong></li>
+<li><strong>说说有了博客以后要干什么</strong></li>
+<li><strong>markdown语法范例</strong></li>
+</ul>
+<hr>
+<h3 id="记一下博客平台的搭建过程">记一下博客平台的搭建过程</h3><ul>
+<li>安装</li>
+</ul>
+<p>前提是必须先安装 Node.js</p>
+<blockquote>
+<p>$: npm install hexo -g</p>
+</blockquote>
+<p>仅需一步就把 Hexo 本体和所有相依套件安装完毕，很简单吧？</p>
+<ul>
+<li>升级</li>
+</ul>
+<p>更新hexo到最新版</p>
+<blockquote>
+<p>$: npm update hexo -g</p>
+</blockquote>
+<ul>
+<li>初始化</li>
+</ul>
+<blockquote>
+<p>$: hexo init </p>
+</blockquote>
+<p>如果指定 <folder>，便会在目前的资料夹建立一个名为 <folder> 的新资料夹；否则会在目前资料夹初始化。</folder></folder></p>
+<ul>
+<li>创建新博客</li>
+</ul>
+<blockquote>
+<p>$: hexo new “Hello World”</p>
+</blockquote>
+<ul>
+<li>生成网站</li>
+</ul>
+<blockquote>
+<p>$: hexo generate</p>
+</blockquote>
+<ul>
+<li>启动本地服务器</li>
+</ul>
+<blockquote>
+<p>$: hexo server</p>
+</blockquote>
+<p>伺服器会跑在 <a href="http://localhost:port" target="_blank" rel="external">http://localhost:port</a> （port 预设为 4000，可在 _config.yml 设定），也可以搭配 Pow 使用：<br>cd ~/.pow<br>ln -s /path/to/myapp</p>
+<p>基本使用差不多就是这样子，非常简单。</p>
+<hr>
+<h3 id="如果你想发布到github上呢">如果你想发布到github上呢</h3><ul>
+<li>先注册账号<br>账号相信你已经有了，登录 -&gt; 绑定ssh-key -&gt; 这里不说这些，<a href="http://blog.csdn.net/binyao02123202/article/details/20130891" target="_blank" rel="external">这里有</a></li>
+<li><p>建立项目<br>命名规侧：github.user.io</p>
+</li>
+<li><p>配置hexo<br>打开blog目录下的_config.yml,找到</p>
+</li>
+</ul>
+<pre><code><span class="attribute">deploy</span>:
+    <span class="attribute">type</span>: git <span class="comment">// 不要写github,在3.0之后不允许写github了</span>
+    <span class="attribute">repo</span>: <span class="comment">// 你的git库地址</span>
+    <span class="attribute">branch</span>: <span class="comment">// 分支，一般直接使用默认的master分支</span>
+</code></pre><p>在配置好了这几个之后，还有一件很重要的事儿要做，那就是安装hexo专用git</p>
+<blockquote>
+<p>$ npm install hexo-deployer-git –save</p>
+</blockquote>
+<p>装好之后剩下的事儿就简单了，生成静态网站之后，执行：</p>
+<blockquote>
+<p>$ hexo deploy</p>
+</blockquote>
+<p>然后你就能看到你的博客了，user.github.io<br>就记这么多吧，足以使用了</p>
+<hr>
+<h3 id="有了博客我要干什么">有了博客我要干什么</h3><ul>
+<li>发一些自己在开发中的心得体会</li>
+<li>摘录一些别人写的好东西</li>
+<li>全当笔记用</li>
+</ul>
+<hr>
+<h3 id="markdown语法范例">markdown语法范例</h3><h1 id="一级标题">一级标题</h1><h2 id="二级标题">二级标题</h2><h6 id="六级标题">六级标题</h6><p>@(示例笔记本)[马克飞象|帮助|Markdown]</p>
+<p><strong>马克飞象</strong>是一款专为印象笔记（Evernote）打造的Markdown编辑器，通过精心的设计与技术实现，配合印象笔记强大的存储和同步功能，带来前所未有的书写体验。特点概述：</p>
+<ul>
+<li><strong>功能丰富</strong> ：支持高亮代码块、<em>LaTeX</em> 公式、流程图，本地图片以及附件上传，甚至截图粘贴，工作学习好帮手；</li>
+<li><strong>得心应手</strong> ：简洁高效的编辑器，提供<a href="http://maxiang.info/client_zh" target="_blank" rel="external">桌面客户端</a>以及<a href="https://chrome.google.com/webstore/detail/kidnkfckhbdkfgbicccmdggmpgogehop" target="_blank" rel="external">离线Chrome App</a>，支持移动端 Web；</li>
+<li><strong>深度整合</strong> ：支持选择笔记本和添加标签，支持从印象笔记跳转编辑，轻松管理。</li>
+</ul>
+<hr>
+<p>[TOC]</p>
+<h2 id="Markdown简介">Markdown简介</h2><blockquote>
+<p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。    —— <a href="https://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="external">维基百科</a></p>
+</blockquote>
+<p>正如您在阅读的这份文档，它使用简单的符号标识不同的标题，将某些文字标记为<strong>粗体</strong>或者<em>斜体</em>，创建一个<a href="http://www.example.com" target="_blank" rel="external">链接</a>或一个脚注[^demo]。下面列举了几个高级功能，更多语法请按<code>Cmd + /</code>查看帮助。 </p>
+<h3 id="代码块">代码块</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="decorator">@requires_authorization</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">somefunc</span><span class="params">(param1=<span class="string">''</span>, param2=<span class="number">0</span>)</span>:</span></span><br><span class="line">    <span class="string">'''A docstring'''</span></span><br><span class="line">    <span class="keyword">if</span> param1 &gt; param2: <span class="comment"># interesting</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">'Greater'</span></span><br><span class="line">    <span class="keyword">return</span> (param2 - param1 + <span class="number">1</span>) <span class="keyword">or</span> <span class="keyword">None</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>message = <span class="string">'''interpreter</span><br><span class="line"><span class="prompt">... </span>prompt'''</span></span><br></pre></td></tr></table></figure>
+<h3 id="LaTeX_公式">LaTeX 公式</h3><p>可以创建行内公式，例如 $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$。或者块级公式：</p>
+<p>$$    x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$</p>
+<h3 id="表格">表格</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">Item</th>
+<th style="text-align:right">Value</th>
+<th style="text-align:center">Qty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Computer</td>
+<td style="text-align:right">1600 USD</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:left">Phone</td>
+<td style="text-align:right">12 USD</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td style="text-align:left">Pipe</td>
+<td style="text-align:right">1 USD</td>
+<td style="text-align:center">234</td>
+</tr>
+</tbody>
+</table>
+<h3 id="流程图">流程图</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">st=&#62;start: Start&#10;e=&#62;end&#10;op=&#62;operation: My Operation&#10;cond=&#62;condition: Yes or No?&#10;&#10;st-&#62;op-&#62;cond&#10;cond(yes)-&#62;e&#10;cond(no)-&#62;op</span><br></pre></td></tr></table></figure>
+<p>以及时序图:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Alice-&#62;Bob: Hello Bob, how are you?&#10;Note right of Bob: Bob thinks&#10;Bob--&#62;Alice: I am good thanks!</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>提示：</strong>想了解更多，请查看<strong>流程图</strong><a href="http://adrai.github.io/flowchart.js/" target="_blank" rel="external">语法</a>以及<strong>时序图</strong><a href="http://bramp.github.io/js-sequence-diagrams/" target="_blank" rel="external">语法</a>。</p>
+</blockquote>
+<h3 id="复选框">复选框</h3><p>使用 <code>- [ ]</code> 和 <code>- [x]</code> 语法可以创建复选框，实现 todo-list 等功能。例如：</p>
+<ul>
+<li>[x] 已完成事项</li>
+<li>[ ] 待办事项1</li>
+<li>[ ] 待办事项2</li>
+</ul>
+<blockquote>
+<p><strong>注意：</strong>目前支持尚不完全，在印象笔记中勾选复选框是无效、不能同步的，所以必须在<strong>马克飞象</strong>中修改 Markdown 原文才可生效。下个版本将会全面支持。</p>
+</blockquote>
+<h2 id="印象笔记相关">印象笔记相关</h2><h3 id="笔记本和标签">笔记本和标签</h3><p><strong>马克飞象</strong>增加了<code>@(笔记本)[标签A|标签B]</code>语法, 以选择笔记本和添加标签。 <strong>绑定账号后</strong>， 输入<code>(</code>自动会出现笔记本列表，请从中选择。</p>
+<h3 id="笔记标题">笔记标题</h3><p><strong>马克飞象</strong>会自动使用文档内出现的第一个标题作为笔记标题。例如本文，就是第一行的 <code>欢迎使用马克飞象</code>。</p>
+<h3 id="快捷编辑">快捷编辑</h3><p>保存在印象笔记中的笔记，右上角会有一个红色的编辑按钮，点击后会回到<strong>马克飞象</strong>中打开并编辑该笔记。</p>
+<blockquote>
+<p><strong>注意：</strong>目前用户在印象笔记中单方面做的任何修改，马克飞象是无法自动感知和更新的。所以请务必回到马克飞象编辑。</p>
+</blockquote>
+<h3 id="数据同步">数据同步</h3><p><strong>马克飞象</strong>通过<strong>将Markdown原文以隐藏内容保存在笔记中</strong>的精妙设计，实现了对Markdown的存储和再次编辑。既解决了其他产品只是单向导出HTML的单薄，又规避了服务端存储Markdown带来的隐私安全问题。这样，服务端仅作为对印象笔记 API调用和数据转换之用。</p>
+<blockquote>
+<p><strong>隐私声明：用户所有的笔记数据，均保存在印象笔记中。马克飞象不存储用户的任何笔记数据。</strong></p>
+</blockquote>
+<h3 id="离线存储">离线存储</h3><p><strong>马克飞象</strong>使用浏览器离线存储将内容实时保存在本地，不必担心网络断掉或浏览器崩溃。为了节省空间和避免冲突，已同步至印象笔记并且不再修改的笔记将删除部分本地缓存，不过依然可以随时通过<code>文档管理</code>打开。</p>
+<blockquote>
+<p><strong>注意：</strong>虽然浏览器存储大部分时候都比较可靠，但印象笔记作为专业云存储，更值得信赖。以防万一，<strong>请务必经常及时同步到印象笔记</strong>。</p>
+</blockquote>
+<h2 id="编辑器相关">编辑器相关</h2><h3 id="设置">设置</h3><p>右侧系统菜单（快捷键<code>Cmd + M</code>）的<code>设置</code>中，提供了界面字体、字号、自定义CSS、vim/emacs 键盘模式等高级选项。</p>
+<h3 id="快捷键">快捷键</h3><p>帮助    <code>Cmd + /</code><br>同步文档    <code>Cmd + S</code><br>创建文档    <code>Cmd + Opt + N</code><br>最大化编辑器    <code>Cmd + Enter</code><br>预览文档 <code>Cmd + Opt + Enter</code><br>文档管理    <code>Cmd + O</code><br>系统菜单    <code>Cmd + M</code> </p>
+<p>加粗    <code>Cmd + B</code><br>插入图片    <code>Cmd + G</code><br>插入链接    <code>Cmd + L</code><br>提升标题    <code>Cmd + H</code></p>
+<h2 id="关于收费">关于收费</h2><p><strong>马克飞象</strong>为新用户提供 10 天的试用期，试用期过后需要<a href="maxiang.info/vip.html">续费</a>才能继续使用。未购买或者未及时续费，将不能同步新的笔记。之前保存过的笔记依然可以编辑。</p>
+<h2 id="反馈与建议">反馈与建议</h2><ul>
+<li>微博：<a href="http://weibo.com/u/2788354117" target="_blank" rel="external">@马克飞象</a>，<a href="http://weibo.com/ggock" title="开发者个人账号" target="_blank" rel="external">@GGock</a></li>
+<li>邮箱：<a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#x68;&#117;&#x73;&#x74;&#x67;&#111;&#x63;&#107;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#x68;&#117;&#x73;&#x74;&#x67;&#111;&#x63;&#107;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a></li>
+</ul>
+<hr>
+<p>感谢阅读这份帮助文档。请点击右上角，绑定印象笔记账号，开启全新的记录与分享体验吧。</p>
+<p>[^demo]: 这是一个示例脚注。请查阅 <a href="https://github.com/fletcher/MultiMarkdown/wiki/MultiMarkdown-Syntax-Guide#footnotes" target="_blank" rel="external">MultiMarkdown 文档</a> 关于脚注的说明。 <strong>限制：</strong> 印象笔记的笔记内容使用 <a href="https://dev.yinxiang.com/doc/articles/enml.php" target="_blank" rel="external">ENML</a> 格式，基于 HTML，但是不支持某些标签和属性，例如id，这就导致<code>脚注</code>和<code>TOC</code>无法正常点击。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-share" id="share">
+
+  
+<div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin"></a>
+    <a href="#" class="bds_tqq" data-cmd="tqq"></a>
+    <a href="#" class="bds_renren" data-cmd="renren"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+</div>
+<script>
+    window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+
+
+
+
+
+</div>
+
+
+
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2015/11/10/hello-world/"  title="Hello World">
+ <strong>下一篇:</strong><br/> 
+ <span>Hello World
+</span>
+</a>
+</div>
+
+</nav>
+
+	<!-- 多说-->
+
+<section class="comment">
+<div class="ds-thread" data-thread-key="post-我的第一篇博文" data-title="我的第一篇博文" data-url="http://yoursite.com/2015/11/11/我的第一篇博文/"></div>
+</section>
+<!-- disqus-->
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  <p class="asidetitle">关注</p>
+<iframe width="260" height="489" frameborder="0" scrolling="no" src="http://widget.weibo.com/relationship/bulkfollow.php?language=zh_cn&uids=3291113350,2148327324,1708947107,3800117445,5722964389&wide=1&color=C2D9F2,FFFFFF,0082CB,666666&showtitle=1&showinfo=1&sense=1&verified=1&count=5&refer='+encodeURIComponent(location.href)+'&dpc=1"></iframe>
+
+  
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+      <li><a href="http://blog.csdn.net/u010217744" target="_blank" title="sandy csdn">CSDN</a></li>
+      <li><a href="https://github.com/sandy183" target="_blank" title="sandy github">github</a></li>
+      <li><a href="http://weibo.com/u/3291113350" target="_blank" title="sandy weibo">新浪微博</a></li>
+    </ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	
+	<section class="info">
+		<p> 没有礁石，就没有美丽的浪花；没有挫折，就没有壮丽的人生！ <br/>
+			再长的路，一步步也能走完，再短的路，不迈开双脚也无法到达，平凡的脚步也可以走完伟大的行程！</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/3291113350" target="_blank" title="weibo"></a>
+		
+		
+		
+		<a href="https://github.com/sandy183" target="_blank" title="github"></a>
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="pacman">pacman</a> © 2015 
+		
+		<a href="http://yoursite.com" target="_blank" title="sandy">sandy</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"dreajaygithubblog"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F77edef7e6931022edbd2322ec66456e1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+<script type="text/javascript">
+	(function($) { 
+		// When to show the scroll link
+		// higher number = scroll link appears further down the page   
+		var upperLimit = 300;
+		
+		// Our scroll link element
+		var scrollElem = $('#totop');
+	   
+		// Scroll to top speed
+		var scrollSpeed = 800;
+	   
+		// Show and hide the scroll to top link based on scroll position   
+		scrollElem.hide();
+		$(window).scroll(function () {            
+			var scrollTop = $(document).scrollTop();       
+			if ( scrollTop > upperLimit ) {
+				$(scrollElem).stop().fadeTo(300, 1); // fade back in           
+			}else{       
+				$(scrollElem).stop().fadeTo(300, 0); // fade out
+			}
+		});
+		// Scroll to top animation on click
+		$(scrollElem).click(function(){
+			$('html, body').animate({scrollTop:0}, scrollSpeed); return false;
+		});
+	})(jQuery);
+</script>
+
+<a href="https://github.com/sandy183" target="_blank" title="sandy183 github"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://avatars1.githubusercontent.com/u/3953125?v=3&u=9b9e59f42bdafa1639fda8e5b66761298335fdbd&s=40" alt="Fork me on GitHub" data-canonical-src="https://avatars1.githubusercontent.com/u/3953125?v=3&u=9b9e59f42bdafa1639fda8e5b66761298335fdbd&s=40"></a>
+
+
+  </body>
+</html>
+
