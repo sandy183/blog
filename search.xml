@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[LLDB调试命令-个人用无序版]]></title>
-      <url>http://sajinwu.github.io/2015/11/13/LLDB%E8%B0%83%E8%AF%95%E5%91%BD%E4%BB%A4-%E4%B8%AA%E4%BA%BA%E7%94%A8%E6%97%A0%E5%BA%8F%E7%89%88/</url>
+      <url>http://sajinwu.github.io/20151113LLDB%E8%B0%83%E8%AF%95%E5%91%BD%E4%BB%A4-%E4%B8%AA%E4%BA%BA%E7%94%A8%E6%97%A0%E5%BA%8F%E7%89%88/</url>
       <content type="html"><![CDATA[<p>使用前提：<br>1.既然是调试命令，理所当然的，程序模式应该选择Debug模式。<br>2.在Debug模式下，如果你的程序在运行中崩溃（Crash）掉，那么恭喜你，使用lldb调试的机会来了。</p>
 <h5 id="bt_:_打印出最后一次调用堆栈信息">bt : 打印出最后一次调用堆栈信息</h5><h5 id="set:设置临时断点">set:设置临时断点</h5><p>用法:</p>
 <ul>
@@ -118,7 +118,7 @@
     
     <entry>
       <title><![CDATA[我的第一篇博文]]></title>
-      <url>http://sajinwu.github.io/2015/11/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/</url>
+      <url>http://sajinwu.github.io/20151111%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/</url>
       <content type="html"><![CDATA[<h2 id="第一篇博文主要干三件事">第一篇博文主要干三件事</h2><ul>
 <li><strong>记一下博客平台的搭建过程</strong></li>
 <li><strong>说说有了博客以后要干什么</strong></li>
@@ -269,7 +269,7 @@
 <h2 id="关于收费">关于收费</h2><p><strong>马克飞象</strong>为新用户提供 10 天的试用期，试用期过后需要<a href="maxiang.info/vip.html">续费</a>才能继续使用。未购买或者未及时续费，将不能同步新的笔记。之前保存过的笔记依然可以编辑。</p>
 <h2 id="反馈与建议">反馈与建议</h2><ul>
 <li>微博：<a href="http://weibo.com/u/2788354117" target="_blank" rel="external">@马克飞象</a>，<a href="http://weibo.com/ggock" title="开发者个人账号" target="_blank" rel="external">@GGock</a></li>
-<li>邮箱：<a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#104;&#x75;&#115;&#x74;&#x67;&#x6f;&#99;&#x6b;&#x40;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#109;">&#104;&#x75;&#115;&#x74;&#x67;&#x6f;&#99;&#x6b;&#x40;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#109;</a></li>
+<li>邮箱：<a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#x68;&#x75;&#x73;&#x74;&#x67;&#x6f;&#x63;&#x6b;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#x68;&#x75;&#x73;&#x74;&#x67;&#x6f;&#x63;&#x6b;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;</a></li>
 </ul>
 <hr>
 <p>感谢阅读这份帮助文档。请点击右上角，绑定印象笔记账号，开启全新的记录与分享体验吧。</p>

@@ -6,7 +6,39 @@
   <title>LLDB调试命令-个人用无序版 | 撒金武的博客</title>
   <meta name="author" content="sandy">
   
-  <meta name="description" content="这段文字会在哪儿出现呢，我想知道">
+  <meta name="description" content="使用前提：1.既然是调试命令，理所当然的，程序模式应该选择Debug模式。2.在Debug模式下，如果你的程序在运行中崩溃（Crash）掉，那么恭喜你，使用lldb调试的机会来了。
+bt : 打印出最后一次调用堆栈信息set:设置临时断点用法:
+
+如果想在某个文件中的某行设置一个断点，可使用以下命令:
+
+
+(lldb) breakpoint set –file foo.c –line 12
+
+
+如果想给某个函数设置断点，可使用以下命令：
+
+
+(lldb) breakpoint set –name foo
+
+
+如果想给C++中所有命名为foo的方法设置断点，可以使用以下命令：
+
+
+(lldb) breakpoint set –method foo
+
+
+如果想给Objective-C中所有命名为alignLeftEdges:的选择器设置断点，则可以使用以下命令：
+
+
+(lldb) breakpoint set –selector alignLeftEdges:
+
+
+我们可以使用—shlib 来将断点限定在一个特定的可执行库中：
+
+
+(lldb) breakpoint set –shlib foo.dylib –name foo
+
+看吧，断点设置命令还是很强大的。">
   
   
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
@@ -34,7 +66,7 @@
 		
 		<div class="header-div">
 		    <h1><a href="/">撒金武的博客</a></h1>
-		    <h2><a href="/">历经千辛万苦，踏遍万水千山，终于搭建起了自己的微博系统，&lt;p&gt;以后会将开发中的一些心得体会及看到的别人写的好的东西一并发上来，当笔记用，&lt;/p&gt;欢迎指正错误</a></h2>
+		    <h2><a href="/">历经千辛万苦，踏遍万水千山，终于搭建起了自己的微博系统，以后会将开发中的一些心得体会及看到的别人写的好的东西一并发上来</a></h2>
 		</div>
 	</div>
 	<div class="alignright col-two">
@@ -77,7 +109,7 @@
   <div class="post-content">
     <header>
         <div class="icon"></div>
-        <time datetime="2015-11-13T03:10:20.000Z"><a href="/2015/11/13/LLDB调试命令-个人用无序版/">2015-11-13</a></time>
+        <time datetime="2015-11-13T03:10:20.000Z"><a href="/20151113LLDB调试命令-个人用无序版/">2015-11-13</a></time>
         <h1 class="title">LLDB调试命令-个人用无序版</h1>
     </header>
     <div class="entry">
@@ -215,7 +247,7 @@
 <section id="relate">
 	<script type="text/javascript" id="wumiiRelatedItems"></script>
 	<script type="text/javascript">
-	    var wumiiPermaLink = "http://sajinwu.github.io/2015/11/13/LLDB调试命令-个人用无序版/"; //请用代码生成文章永久的链接
+	    var wumiiPermaLink = "http://sajinwu.github.io/20151113LLDB调试命令-个人用无序版/"; //请用代码生成文章永久的链接
 	    var wumiiTitle = "LLDB调试命令-个人用无序版"; //请用代码生成文章标题
 	    var wumiiTags = "[object Object]"; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
 	    var wumiiCategories = "[object Object]"; //请用代码生成文章分类，分类名放在 JSONArray 	中，如: ["分类1", "分类2"]
@@ -232,7 +264,7 @@
 
 
     <!-- 多说评论框 start -->
-<div class="ds-thread" data-thread-key="2015/11/13/LLDB调试命令-个人用无序版/" data-title="LLDB调试命令-个人用无序版" data-url="http://sajinwu.github.io/2015/11/13/LLDB调试命令-个人用无序版/"></div>
+<div class="ds-thread" data-thread-key="20151113LLDB调试命令-个人用无序版/" data-title="LLDB调试命令-个人用无序版" data-url="http://sajinwu.github.io/20151113LLDB调试命令-个人用无序版/"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
@@ -262,10 +294,6 @@ var duoshuoQuery = {short_name:"sajinwu"};
 	
 		<li><a href="/categories/开发/">开发</a><small>2</small></li>
 	
-  
-	
-		<li><a class = "list-2"href="/categories/开发/生活/">生活</a><small>0</small></li>
-     
    -->
      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a><span class="category-list-count">2</span></li></ul> 
 </div>
