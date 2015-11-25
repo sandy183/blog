@@ -3,13 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>撒金武的博客</title>
+  <title>UIview属性 | 撒金武的博客</title>
   <meta name="author" content="sandy">
+  
+  <meta name="description" content="UIview的属性今天突然发现每次遇到View的内容填充问题时都需要上网去查，索性直接自己记下来，省的下次去查了
+UIViewContentMode的含义typedef NS_ENUM(NSInteger, UIViewContentMode) {
+    UIViewContentModeScal">
   
   
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
-  
+  <meta property="og:title" content="UIview属性">
   <meta property="og:site_name" content="撒金武的博客">
 
   
@@ -76,7 +80,7 @@
     <header>
         <div class="icon"></div>
         <time datetime="2015-11-25T07:31:01.000Z"><a href="/20151125UIview属性/">2015-11-25</a></time>
-        <h1 class="title"><a href="/20151125UIview属性/">UIview属性</a></h1>
+        <h1 class="title">UIview属性</h1>
     </header>
     <div class="entry">
       
@@ -108,10 +112,8 @@
 <!--        -->
         
         
-        <div class="alignright">
-          <a href="/20151125UIview属性/#comment" class="comment-link">评论</a>
-        </div>
-        
+        <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 <!--        -->
       <div class="clearfix"></div>
     </footer>
@@ -120,10 +122,10 @@
 <section id="relate">
 	<script type="text/javascript" id="wumiiRelatedItems"></script>
 	<script type="text/javascript">
-	    var wumiiPermaLink = "undefined"; //请用代码生成文章永久的链接
-	    var wumiiTitle = "undefined"; //请用代码生成文章标题
-	    var wumiiTags = "undefined"; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
-	    var wumiiCategories = "undefined"; //请用代码生成文章分类，分类名放在 JSONArray 	中，如: ["分类1", "分类2"]
+	    var wumiiPermaLink = "http://sajinwu.github.io/20151125UIview属性/"; //请用代码生成文章永久的链接
+	    var wumiiTitle = "UIview属性"; //请用代码生成文章标题
+	    var wumiiTags = "[object Object]"; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
+	    var wumiiCategories = "[object Object]"; //请用代码生成文章分类，分类名放在 JSONArray 	中，如: ["分类1", "分类2"]
 	    var wumiiSitePrefix = "http://sandy183.github.io/";
 	    var wumiiParams = "&num=6&mode=3&pf=JAVASCRIPT";
 	</script>
@@ -132,137 +134,28 @@
 	    <img src="http://static.wumii.cn/images/pixel.png" alt="无觅关联推荐，快速提升流量" style="border:0;padding:0;margin:0">
 	</a>
 </section>
+<section id="comment">
+<!--   <h1 class="title">留言</h1> -->
 
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-        <div class="icon"></div>
-        <time datetime="2015-11-13T03:10:20.000Z"><a href="/20151113LLDB调试命令-个人用无序版/">2015-11-13</a></time>
-        <h1 class="title"><a href="/20151113LLDB调试命令-个人用无序版/">LLDB调试命令-个人用无序版</a></h1>
-    </header>
-    <div class="entry">
-      
-        <p>使用前提：<br>1.既然是调试命令，理所当然的，程序模式应该选择Debug模式。<br>2.在Debug模式下，如果你的程序在运行中崩溃（Crash）掉，那么恭喜你，使用lldb调试的机会来了。</p>
-<h5 id="bt_:_打印出最后一次调用堆栈信息">bt : 打印出最后一次调用堆栈信息</h5><h5 id="set:设置临时断点">set:设置临时断点</h5><p>用法:</p>
-<ul>
-<li>如果想在<strong>某个文件中的某行</strong>设置一个断点，可使用以下命令:</li>
-</ul>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(lldb) <span class="built_in">breakpoint</span> <span class="built_in">set</span> <span class="comment">--file foo.c --line 12</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>如果想给某个<strong>函数</strong>设置断点，可使用以下命令：</li>
-</ul>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(lldb) <span class="built_in">breakpoint</span> <span class="built_in">set</span> <span class="comment">--name foo</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>如果想给<strong>C++</strong>中所有命名为foo的方法设置断点，可以使用以下命令：</li>
-</ul>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(lldb) breakpoint <span class="type">set</span> --<span class="keyword">method</span> foo</span><br></pre></td></tr></table></figure>
-<ul>
-<li>如果想给<strong>Objective-C</strong>中所有命名为alignLeftEdges:的选择器设置断点，则可以使用以下命令：</li>
-</ul>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(lldb) <span class="built_in">breakpoint</span> <span class="built_in">set</span> <span class="comment">--selector alignLeftEdges:</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>我们可以使用<strong>—shlib</strong> 来将断点限定在一个特定的可执行库中：</li>
-</ul>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(lldb) <span class="built_in">breakpoint</span> <span class="built_in">set</span> <span class="comment">--shlib foo.dylib --name foo</span></span><br></pre></td></tr></table></figure>
-<p>看吧，断点设置命令还是很强大的。</p>
-      
-    </div>
-    <footer>
-<!--        -->
-        
-          <div class="alignleft">
-            <a href="/20151113LLDB调试命令-个人用无序版/#more" class="more-link">查看更多</a>
-          </div>
-        
-        
-        <div class="alignright">
-          <a href="/20151113LLDB调试命令-个人用无序版/#comment" class="comment-link">评论</a>
-        </div>
-        
-<!--        -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-<section id="relate">
-	<script type="text/javascript" id="wumiiRelatedItems"></script>
-	<script type="text/javascript">
-	    var wumiiPermaLink = "undefined"; //请用代码生成文章永久的链接
-	    var wumiiTitle = "undefined"; //请用代码生成文章标题
-	    var wumiiTags = "undefined"; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
-	    var wumiiCategories = "undefined"; //请用代码生成文章分类，分类名放在 JSONArray 	中，如: ["分类1", "分类2"]
-	    var wumiiSitePrefix = "http://sandy183.github.io/";
-	    var wumiiParams = "&num=6&mode=3&pf=JAVASCRIPT";
-	</script>
-	<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
-	<a href="http://www.wumii.com/widget/relatedItems" style="border:0">
-	    <img src="http://static.wumii.cn/images/pixel.png" alt="无觅关联推荐，快速提升流量" style="border:0;padding:0;margin:0">
-	</a>
-</section>
 
-    <article class="post">
+    <!-- 多说评论框 start -->
+<div class="ds-thread" data-thread-key="20151125UIview属性/" data-title="UIview属性" data-url="http://sajinwu.github.io/20151125UIview属性/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sajinwu"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
   
-  <div class="post-content">
-    <header>
-        <div class="icon"></div>
-        <time datetime="2015-11-11T12:04:24.000Z"><a href="/20151111我的第一篇博文/">2015-11-11</a></time>
-        <h1 class="title"><a href="/20151111我的第一篇博文/">我的第一篇博文</a></h1>
-    </header>
-    <div class="entry">
-      
-        <h2 id="第一篇博文主要干三件事">第一篇博文主要干三件事</h2><ul>
-<li><strong>记一下博客平台的搭建过程</strong></li>
-<li><strong>说说有了博客以后要干什么</strong></li>
-<li><strong>markdown语法范例</strong></li>
-</ul>
-<hr>
-<h3 id="记一下博客平台的搭建过程">记一下博客平台的搭建过程</h3><ul>
-<li>安装</li>
-</ul>
-<p>前提是必须先安装 Node.js</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$: npm <span class="operator"><span class="keyword">install</span> hexo -<span class="keyword">g</span></span></span><br></pre></td></tr></table></figure>
-<p>仅需一步就把 Hexo 本体和所有相依套件安装完毕，很简单吧？</p>
-      
-    </div>
-    <footer>
-<!--        -->
-        
-          <div class="alignleft">
-            <a href="/20151111我的第一篇博文/#more" class="more-link">查看更多</a>
-          </div>
-        
-        
-        <div class="alignright">
-          <a href="/20151111我的第一篇博文/#comment" class="comment-link">评论</a>
-        </div>
-        
-<!--        -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-<section id="relate">
-	<script type="text/javascript" id="wumiiRelatedItems"></script>
-	<script type="text/javascript">
-	    var wumiiPermaLink = "undefined"; //请用代码生成文章永久的链接
-	    var wumiiTitle = "undefined"; //请用代码生成文章标题
-	    var wumiiTags = "undefined"; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
-	    var wumiiCategories = "undefined"; //请用代码生成文章分类，分类名放在 JSONArray 	中，如: ["分类1", "分类2"]
-	    var wumiiSitePrefix = "http://sandy183.github.io/";
-	    var wumiiParams = "&num=6&mode=3&pf=JAVASCRIPT";
-	</script>
-	<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
-	<a href="http://www.wumii.com/widget/relatedItems" style="border:0">
-	    <img src="http://static.wumii.cn/images/pixel.png" alt="无觅关联推荐，快速提升流量" style="border:0;padding:0;margin:0">
-	</a>
-</section>
- 
-<nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav></div></div>
+</section></div></div>
   		<aside id="sidebar" class="alignright"><div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">

@@ -4,6 +4,28 @@
   
     
     <entry>
+      <title><![CDATA[UIview属性]]></title>
+      <url>http://sajinwu.github.io/20151125UIview%E5%B1%9E%E6%80%A7/</url>
+      <content type="html"><![CDATA[<h1 id="UIview的属性">UIview的属性</h1><p>今天突然发现每次遇到View的内容填充问题时都需要上网去查，索性直接自己记下来，省的下次去查了</p>
+<h2 id="UIViewContentMode的含义">UIViewContentMode的含义</h2><pre><code><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, <span class="built_in">UIViewContentMode</span>) {
+    <span class="built_in">UIViewContentModeScaleToFill</span>,       <span class="comment">// 默认项，完全填充</span>
+    <span class="built_in">UIViewContentModeScaleAspectFit</span>,    <span class="comment">// 保持比例，以长边填满（不会溢出）</span>
+    <span class="built_in">UIViewContentModeScaleAspectFill</span>,   <span class="comment">// 保持比例，以短边填满（可能溢出）</span>
+    <span class="built_in">UIViewContentModeRedraw</span>,            <span class="comment">// 在调用了setNeedsDisplay方法之后会重绘</span>
+    <span class="built_in">UIViewContentModeCenter</span>,            <span class="comment">// 居中显示，大小不变</span>
+    <span class="built_in">UIViewContentModeTop</span>,               <span class="comment">// 靠上显示，大小不变</span>
+    <span class="built_in">UIViewContentModeBottom</span>,            <span class="comment">// 靠下显示，大小不变</span>
+       <span class="built_in">UIViewContentModeLeft</span>,           <span class="comment">// 靠左显示，大小不变 </span>
+    <span class="built_in">UIViewContentModeRight</span>,             <span class="comment">// 靠右显示，大小不变</span>
+    <span class="built_in">UIViewContentModeTopLeft</span>,           <span class="comment">// 左上显示，大小不变</span>
+    <span class="built_in">UIViewContentModeTopRight</span>,          <span class="comment">// 右上显示，大小不变</span>
+    <span class="built_in">UIViewContentModeBottomLeft</span>,        <span class="comment">// 左下显示，大小不变</span>
+    <span class="built_in">UIViewContentModeBottomRight</span>,       <span class="comment">// 右下显示，大小不变</span>
+};
+</code></pre><p>今天就记这么多吧，想起来再记</p>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[LLDB调试命令-个人用无序版]]></title>
       <url>http://sajinwu.github.io/20151113LLDB%E8%B0%83%E8%AF%95%E5%91%BD%E4%BB%A4-%E4%B8%AA%E4%BA%BA%E7%94%A8%E6%97%A0%E5%BA%8F%E7%89%88/</url>
       <content type="html"><![CDATA[<p>使用前提：<br>1.既然是调试命令，理所当然的，程序模式应该选择Debug模式。<br>2.在Debug模式下，如果你的程序在运行中崩溃（Crash）掉，那么恭喜你，使用lldb调试的机会来了。</p>
@@ -11,100 +33,63 @@
 <ul>
 <li>如果想在<strong>某个文件中的某行</strong>设置一个断点，可使用以下命令:</li>
 </ul>
-<blockquote>
-<p>(lldb) breakpoint set –file foo.c –line 12</p>
-</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(lldb) <span class="built_in">breakpoint</span> <span class="built_in">set</span> <span class="comment">--file foo.c --line 12</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>如果想给某个<strong>函数</strong>设置断点，可使用以下命令：</li>
 </ul>
-<blockquote>
-<p>(lldb) breakpoint set –name foo</p>
-</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(lldb) <span class="built_in">breakpoint</span> <span class="built_in">set</span> <span class="comment">--name foo</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>如果想给<strong>C++</strong>中所有命名为foo的方法设置断点，可以使用以下命令：</li>
 </ul>
-<blockquote>
-<p>(lldb) breakpoint set –method foo</p>
-</blockquote>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(lldb) breakpoint <span class="type">set</span> --<span class="keyword">method</span> foo</span><br></pre></td></tr></table></figure>
 <ul>
 <li>如果想给<strong>Objective-C</strong>中所有命名为alignLeftEdges:的选择器设置断点，则可以使用以下命令：</li>
 </ul>
-<blockquote>
-<p>(lldb) breakpoint set –selector alignLeftEdges:</p>
-</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(lldb) <span class="built_in">breakpoint</span> <span class="built_in">set</span> <span class="comment">--selector alignLeftEdges:</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>我们可以使用<strong>—shlib</strong> 来将断点限定在一个特定的可执行库中：</li>
 </ul>
-<blockquote>
-<p>(lldb) breakpoint set –shlib foo.dylib –name foo</p>
-</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(lldb) <span class="built_in">breakpoint</span> <span class="built_in">set</span> <span class="comment">--shlib foo.dylib --name foo</span></span><br></pre></td></tr></table></figure>
 <p>看吧，断点设置命令还是很强大的。</p>
 <a id="more"></a>
 <p>如果我们想查看程序中所有的断点，则可以使用breakpoint list命令，如下所示:</p>
-<blockquote>
-<p>(lldb) breakpoint list<br>Current breakpoints:<br>1: file = ‘../Business/MainView/controller/HomePageViewController.m’, line = 146, locations = 1, resolved = 1, hit count = 1<br>  1.1: where = Recruitment`-[HomePageViewController createTableView] + 495 at HomePageViewController.m:146, address = 0x000000010c4dccdf, resolved, hit count = 1 </p>
-</blockquote>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(lldb) breakpoint <span class="keyword">list</span></span><br><span class="line">Current breakpoints:</span><br><span class="line">1: <span class="keyword">file</span> = '../Business/MainView/controller/HomePageViewController.<span class="keyword">m</span>', <span class="keyword">line</span> = 146, locations = 1, resolved = 1, hit <span class="keyword">count</span> = 1</span><br><span class="line">  1.1: where = Recruitment`-[HomePageViewController createTableView] + 495 at HomePageViewController.<span class="keyword">m</span>:146, address = 0x000000010c4dccdf, resolved, hit <span class="keyword">count</span> = 1</span><br></pre></td></tr></table></figure>
 <p>从上面的输出结果可以看出，一个断点一般有两部分：</p>
 <p>1.断点的逻辑规范，这一部分是用户提供给breakpoint set命令的。<br>2.与规范匹配的断点的位置。</p>
 <p>breakpoint list命令输出列表显示每个逻辑断点都有一个整数标识，如上所示断点标识为1。而每个位置也会有一个标识，如上所示的1.1<br> 不管是逻辑断点产生的所有位置，还是逻辑断点解析的任何特定位置，我们都可以使用断点触发命令来对其进行删除、禁用、设置条件或忽略计数操作。例如，如果我们想添加一个命令，以在LLDB命中断点1.1时打印跟踪栈，则可以执行以下命令:</p>
-<blockquote>
-<p>(lldb) breakpoint command add 1.1<br>Enter your debugger command(s). Type ‘DONE’ to end.<br>> bt<br>> DONE</p>
-</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(lldb) <span class="built_in">breakpoint</span> <span class="command"><span class="keyword">command</span> <span class="title">add</span> <span class="title">1</span><span class="number">.1</span></span></span><br><span class="line"> Enter your debugger <span class="command"><span class="keyword">command</span>(<span class="title">s</span>). <span class="title">Type</span> <span class="string">'DONE'</span> <span class="title">to</span> <span class="title">end</span>.</span></span><br><span class="line">\ bt</span><br><span class="line">\ DONE</span><br></pre></td></tr></table></figure>
 <p>如果想更详细地了解”breakpoint command add”命令的使用，可以使用help帮助系统来查看</p>
 <p>当然这里记了这么多，没什么乱用，因为真正会在终端下使用<strong>LLDB</strong>的人会看我的笔记？咱们还是看看<strong>Xcode</strong>里面怎么用吧</p>
 <ul>
 <li>打印-最实用的，<br>打印变量的值可以使用print命令，该命令如果打印的是简单类型，则会列出简单类型的类型和值。如果是对象，还会打印出对象指针地址，如下所示：</li>
 </ul>
-<blockquote>
-<p>(lldb) print a<br>(NSInteger) $0 = 0<br>(lldb) print b<br>(NSInteger) $1 = 0<br>(lldb) print str<br>(NSString <em>) $2 = 0x0000000100001048 @”abc”<br>(lldb) print url<br>(NSURL </em>) $3 = 0x0000000100206cc0 @”abc”</p>
-</blockquote>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(lldb) print a</span><br><span class="line">(NSInteger) <span class="variable">$0</span> = <span class="number">0</span></span><br><span class="line">(lldb) print b</span><br><span class="line">(NSInteger) <span class="variable">$1</span> = <span class="number">0</span></span><br><span class="line">(lldb) print str</span><br><span class="line">(NSString *) <span class="variable">$2</span> = <span class="number">0x0000000100001048</span> @<span class="string">"abc"</span></span><br><span class="line">(lldb) print url</span><br><span class="line">(NSURL *) <span class="variable">$3</span> = <span class="number">0x0000000100206cc0</span> @<span class="string">"abc"</span></span><br></pre></td></tr></table></figure>
 <p>在输出结果中我们还能看到类似于\$0,\$1这样的符号，我们可以将其看作是指向对象的一个引用，我们在控制面板中可以直接使用这个符号来操作对应的对象，这些东西存在于LLDB的全名空间中，目的是为了辅助调试。如下所示:</p>
-<blockquote>
-<p>(lldb) exp $0 = 100 </p>
-<p>(NSInteger) $9 = 100</p>
-<p>(lldb) p a<br>(NSInteger) $10 = 100</p>
-</blockquote>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(lldb) exp <span class="variable">$0</span> = <span class="number">100</span> </span><br><span class="line"></span><br><span class="line">(NSInteger) <span class="variable">$9</span> = <span class="number">100</span></span><br><span class="line"></span><br><span class="line">(lldb) p a</span><br><span class="line">(NSInteger) <span class="variable">$10</span> = <span class="number">100</span></span><br></pre></td></tr></table></figure>
 <p>另外$后面的数值是递增的，每打印一个与对象相关的命令，这个值都会加1<br>上面的print命令会打印出对象的很多信息，如果我们只想查看对象的值的信息，则可以使用po(print object的缩写)命令，如下所示：</p>
-<blockquote>
-<p>(lldb)po str<br>abc</p>
-</blockquote>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">lldb</span>)</span>po str</span><br><span class="line">abc</span><br></pre></td></tr></table></figure>
 <p>当然，po命令是”exp -O —“命令的别名，使用”exp -O —”能达到同样的效果<br>对于简单类型，我们还可以为其指定不同的打印格式，其命令格式是print/，如下所示：</p>
-<blockquote>
-<p>(lldb) p/x a<br>(NSInteger) $13 = 0x0000000000000064</p>
-</blockquote>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(lldb) p/x a</span><br><span class="line">(NSInteger) <span class="variable">$13</span> = <span class="number">0x0000000000000064</span></span><br></pre></td></tr></table></figure>
 <p>格式的完整清单可以参考<a href="https://sourceware.org/gdb/onlinedocs/gdb/Output-Formats.html" target="_blank" rel="external">Output Formats</a></p>
 <ul>
 <li>expression</li>
 </ul>
 <p>在开发中，我们经常会遇到这样一种情况：我们设置一个视图的背景颜色，运行后发现颜色不好看。嗯，好吧，在代码里面修改一下，再编译运行一下，嗯，还是不好看，然后再修改吧～～这样无形中浪费了我们大把的时间。在这种情况下，expression命令强大的功能就能体现出来了，它不仅会改变调试器中的值，还改变了程序中的实际值。我们先来看看实际效果，如下所示:</p>
-<blockquote>
-<p>(lldb) exp a = 10<br>(NSInteger) $0 = 10</p>
-<p>(lldb) exp b = 100<br>(NSInteger) $1 = 100<br>2015-01-25 14:00:41.313 test[18064:71466] a + b = 110, abc</p>
-</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(lldb) <span class="built_in">exp</span> a = <span class="number">10</span></span><br><span class="line">(NSInteger) $<span class="number">0</span> = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">(lldb) <span class="built_in">exp</span> b = <span class="number">100</span></span><br><span class="line">(NSInteger) $<span class="number">1</span> = <span class="number">100</span></span><br><span class="line"><span class="number">2015</span>-<span class="number">01</span>-<span class="number">25</span> <span class="number">14</span>:<span class="number">00</span>:<span class="number">41.313</span> test[<span class="number">18064</span>:<span class="number">71466</span>] a + b = <span class="number">110</span>, abc</span><br></pre></td></tr></table></figure>
 <p>expression命令的功能不仅于此，正如上面的po命令，其实际也是”expression -O —“命令的别名。更详细使用可以参考<a href="https://developer.apple.com/library/mac/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-command-examples.html#//apple_ref/doc/uid/TP40012917-CH3-SW5" target="_blank" rel="external">Evaluating Expressions</a>.</p>
 <ul>
 <li>image(并非图片)</li>
 </ul>
 <p>image命令的用法也挺多，首先可以用它来查看工程中使用的库，如下所示：</p>
-<blockquote>
-<p>(lldb) image list<br>[  0] 432A6EBF-B9D2-3850-BCB2-821B9E62B1E0 0x0000000100000000 /Users/**/Library/Developer/Xcode/DerivedData/test-byjqwkhxixddxudlnvqhrfughkra/Build/Products/Debug/test<br>[  1] 65DCCB06-339C-3E25-9702-600A28291D0E 0x00007fff5fc00000 /usr/lib/dyld<br>[  2] E3746EDD-DFB1-3ECB-88ED-A91AC0EF3AAA 0x00007fff8d324000 /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation<br>[  3] 759E155D-BC42-3D4E-869B-6F57D477177C 0x00007fff8869f000 /usr/lib/libobjc.A.dylib<br>[  4] 5C161F1A-93BA-3221-A31D-F86222005B1B 0x00007fff8c75c000 /usr/lib/libSystem.B.dylib<br>[  5] CBD1591C-405E-376E-87E9-B264610EBF49 0x00007fff8df0d000 /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation<br>[  6] A260789B-D4D8-316A-9490-254767B8A5F1 0x00007fff8de36000 /usr/lib/libauto.dylib </p>
-</blockquote>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(lldb) image list</span><br><span class="line">[  <span class="number">0</span>] <span class="number">432</span>A6EBF-<span class="constant">B9D2</span>-<span class="number">3850</span>-<span class="constant">BCB2</span>-<span class="number">821</span>B9E62B1E0 <span class="number">0x0000000100000000</span> /<span class="constant">Users</span>/**<span class="regexp">/Library/</span><span class="constant">Developer</span>/<span class="constant">Xcode</span>/<span class="constant">DerivedData</span>/test-byjqwkhxixddxudlnvqhrfughkra/<span class="constant">Build</span>/<span class="constant">Products</span>/<span class="constant">Debug</span>/test </span><br><span class="line">[  <span class="number">1</span>] <span class="number">65</span>DCCB06-<span class="number">339</span>C-<span class="number">3E25</span>-<span class="number">9702</span>-<span class="number">600</span>A28291D0E <span class="number">0x00007fff5fc00000</span> /usr/<span class="class"><span class="keyword">lib</span>/<span class="title">dyld</span> </span></span><br><span class="line">[  <span class="number">2</span>] <span class="constant">E3746EDD</span>-<span class="constant">DFB1</span>-<span class="number">3</span>ECB-<span class="number">88</span>ED-<span class="constant">A91AC0EF3AAA</span> <span class="number">0x00007fff8d324000</span> /<span class="constant">System</span>/<span class="constant">Library</span>/<span class="constant">Frameworks</span>/<span class="constant">Foundation</span>.framework/<span class="constant">Versions</span>/<span class="constant">C</span>/<span class="constant">Foundation</span> </span><br><span class="line">[  <span class="number">3</span>] <span class="number">759E155</span>D-<span class="constant">BC42</span>-<span class="number">3</span>D4E-<span class="number">869</span>B-<span class="number">6</span>F57D477177C <span class="number">0x00007fff8869f000</span> /usr/<span class="class"><span class="keyword">lib</span>/<span class="title">libobjc</span>.<span class="title">A</span>.<span class="title">dylib</span> </span></span><br><span class="line">[  <span class="number">4</span>] <span class="number">5</span>C161F1A-<span class="number">93</span>BA-<span class="number">3221</span>-<span class="constant">A31D</span>-<span class="constant">F86222005B1B</span> <span class="number">0x00007fff8c75c000</span> /usr/<span class="class"><span class="keyword">lib</span>/<span class="title">libSystem</span>.<span class="title">B</span>.<span class="title">dylib</span> </span></span><br><span class="line">[  <span class="number">5</span>] <span class="constant">CBD1591C</span>-<span class="number">405E-376</span>E-<span class="number">87E9</span>-<span class="constant">B264610EBF49</span> <span class="number">0x00007fff8df0d000</span> /<span class="constant">System</span>/<span class="constant">Library</span>/<span class="constant">Frameworks</span>/<span class="constant">CoreFoundation</span>.framework/<span class="constant">Versions</span>/<span class="constant">A</span>/<span class="constant">CoreFoundation</span> </span><br><span class="line">[  <span class="number">6</span>] <span class="constant">A260789B</span>-<span class="constant">D4D8</span>-<span class="number">316</span>A-<span class="number">9490</span>-<span class="number">254767</span>B8A5F1 <span class="number">0x00007fff8de36000</span> /usr/<span class="class"><span class="keyword">lib</span>/<span class="title">libauto</span>.<span class="title">dylib</span></span></span><br></pre></td></tr></table></figure>
 <p>我们还可以用它来查找可执行文件或共享库的原始地址，这一点还是很有用的，当我们的程序崩溃时，我们可以使用这条命令来查找崩溃所在的具体位置，如下所示：</p>
-<blockquote>
-<p>NSArray *array = @[@1, @2];<br>NSLog(@”item 3: %@”, array[2]);</p>
-</blockquote>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">NSArray</span> *array = <span class="annotation">@[<span class="variable">@1</span>, <span class="variable">@2</span>]</span>;</span><br><span class="line"><span class="constant">NSLog</span>(@<span class="string">"item 3: %@"</span>, array[<span class="number">2</span>]);</span><br></pre></td></tr></table></figure>
 <p>这段代码在运行后会抛出如下异常：</p>
-<blockquote>
-<p>2015-01-25 14:12:01.007 test[18122:76474] <strong><em> Terminating app due to uncaught exception ‘NSRangeException’, reason: ‘</em></strong> -[<strong>NSArrayI objectAtIndex:]: index 2 beyond bounds [0 .. 1]’<br><em>*</em> First throw call stack:<br>(<br> 0   CoreFoundation                      0x00007fff8e06f66c </strong>exceptionPreprocess + 172<br>1   libobjc.A.dylib                     0x00007fff886ad76e objc_exception_throw + 43<br>2   CoreFoundation                      0x00007fff8df487de -[__NSArrayI objectAtIndex:] + 190<br>3   test                                0x0000000100000de0 main + 384<br> 4   libdyld.dylib                       0x00007fff8f1b65c9 start + 1<br>)<br>libc++abi.dylib: terminating with uncaught exception of type NSException</p>
-</blockquote>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2015-01-25</span> <span class="number">14:12:01.00</span>7 test[<span class="number">18122:76474</span>] *** Terminating app due to uncaught exception 'NSRangeException', reason: '*** -[__NSArrayI objectAtIndex:]: index 2 beyond bounds [0 .. 1]'</span><br><span class="line">*** First throw call stack:</span><br><span class="line">(</span><br><span class="line">    0   CoreFoundation                      <span class="number">0x00007</span>fff8e06f66c __exceptionPreprocess + 172</span><br><span class="line">   1   libobjc.<span class="keyword">A</span>.dylib                     <span class="number">0x00007</span>fff886ad76e objc_exception_throw + 43</span><br><span class="line">   2   CoreFoundation                      <span class="number">0x00007</span>fff8df487de -[__NSArrayI objectAtIndex:] + 190</span><br><span class="line">   3   test                                <span class="number">0x00000001</span>00000de0 main + 384</span><br><span class="line">    4   libdyld.dylib                       <span class="number">0x00007</span>fff<span class="number">8f1b65c9</span> start + 1</span><br><span class="line">)</span><br><span class="line">libc++abi.dylib: terminating with uncaught exception of type NSException</span><br></pre></td></tr></table></figure>
 <p>根据以上信息，我们可以判断崩溃位置是在main.m文件中，要想知道具体在哪一行，可以使用以下命令：</p>
-<blockquote>
-<p>(lldb) image lookup –address 0x0000000100000de0<br> Address: test[0x0000000100000de0] (test.<strong>TEXT.</strong>text + 384)<br>Summary: test`main + 384 at main.m:23</p>
-</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(lldb) image lookup --address <span class="number">0x0000000100000de0</span></span><br><span class="line">    Address: test[<span class="number">0x0000000100000de0</span>] (test.__TEXT.__text + <span class="number">384</span>)</span><br><span class="line">   Summary: test`main + <span class="number">384</span> at main.m:<span class="number">23</span></span><br></pre></td></tr></table></figure>
 <p>可以看到，最后定位到了main.m文件的第23行，正是我们代码所在的位置。<br>我们还可以使用image lookup命令来查看具体的类型，如下所示:</p>
-<blockquote>
-<p>(lldb) image lookup –type NSURL<br>Best match found in /Users/<em>*/Library/Developer/Xcode/DerivedData/test-byjqwkhxixddxudlnvqhrfughkra/Build/Products/Debug/test:<br>id = {0x100000157}, name = “NSURL”, byte-size = 40, decl = NSURL.h:17, clang_type = “@interface NSURL : NSObject{<br>NSString </em> _urlString;<br>NSURL <em> _baseURL;<br>void </em> _clients;<br>void <em> _reserved;<br>}<br>@property ( readonly,getter = absoluteString,setter = <null selector="">,nonatomic ) NSString </null></em> absoluteString;<br>@property ( readonly,getter = relativeString,setter = <null selector="">,nonatomic ) NSString <em> relativeString;<br>@property ( readonly,getter = baseURL,setter = <null selector="">,nonatomic ) NSURL </null></em> baseURL;<br>@property ( readonly,getter = absoluteURL,setter = <null selector="">,nonatomic ) NSURL <em> absoluteURL;<br>@property ( readonly,getter = scheme,setter = <null selector="">,nonatomic ) NSString </null></em> scheme;<br>@property ( readonly,getter = resourceSpecifier,setter = <null selector="">,nonatomic ) NSString <em> resourceSpecifier;<br>@property ( readonly,getter = host,setter = <null selector="">,nonatomic ) NSString </null></em> host;<br>@property ( readonly,getter = port,setter = <null selector="">,nonatomic ) NSNumber <em> port;<br>@property ( readonly,getter = user,setter = <null selector="">,nonatomic ) NSString </null></em> user;<br>@property ( readonly,getter = password,setter = <null selector="">,nonatomic ) NSString <em> password;<br>@property ( readonly,getter = path,setter = <null selector="">,nonatomic ) NSString </null></em> path;<br>@property ( readonly,getter = fragment,setter = <null selector="">,nonatomic ) NSString <em> fragment;<br>@property ( readonly,getter = parameterString,setter = <null selector="">,nonatomic ) NSString </null></em> parameterString;<br>@property ( readonly,getter = query,setter = <null selector="">,nonatomic ) NSString <em> query;<br>@property ( readonly,getter = relativePath,setter = <null selector="">,nonatomic ) NSString </null></em> relativePath;<br>@property ( readonly,getter = fileSystemRepresentation,setter = <null selector=""> ) const char <em> fileSystemRepresentation;<br>@property ( readonly,getter = isFileURL,setter = <null selector="">,readwrite ) BOOL fileURL;<br>@property ( readonly,getter = standardizedURL,setter = <null selector="">,nonatomic ) NSURL </null></null></em> standardizedURL;<br>@property ( readonly,getter = filePathURL,setter = <null selector="">,nonatomic ) NSURL * filePathURL;<br>@end”</null></null></null></null></null></null></null></null></null></p>
-</blockquote>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">(lldb) image lookup --type NSURL</span><br><span class="line"> Best match found in /Users/**/Library/Developer/Xcode/DerivedData/test-byjqwkhxixddxudlnvqhrfughkra/Build/Products/Debug/test:</span><br><span class="line"> id = &#123;<span class="number">0x100000157</span>&#125;, name = "NSURL", byte-size = 40, decl = NSURL.h:17, clang_type = "@interface NSURL : NSObject&#123;</span><br><span class="line">    NSString * _urlString<span class="comment">;</span></span><br><span class="line">    NSURL * _baseURL<span class="comment">;</span></span><br><span class="line">    void * _clients<span class="comment">;</span></span><br><span class="line">    void * _reserved<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">@property ( readonly,getter = absoluteString,setter = &lt;null selector,nonatomic ) NSString * absoluteString<span class="comment">;</span></span><br><span class="line">@property ( readonly,getter = relativeString,setter = &lt;null selector,nonatomic ) NSString * relativeString<span class="comment">;</span></span><br><span class="line">@property ( readonly,getter = baseURL,setter = &lt;null selector,nonatomic ) NSURL * baseURL<span class="comment">;</span></span><br><span class="line">@property ( readonly,getter = absoluteURL,setter = &lt;null selector,nonatomic ) NSURL * absoluteURL<span class="comment">;</span></span><br><span class="line">@property ( readonly,getter = scheme,setter = &lt;null selector,nonatomic ) NSString * scheme<span class="comment">;</span></span><br><span class="line">@property ( readonly,getter = resourceSpecifier,setter = &lt;null selector,nonatomic ) NSString * resourceSpecifier<span class="comment">;</span></span><br><span class="line">@property ( readonly,getter = host,setter = &lt;null selector,nonatomic ) NSString * host<span class="comment">;</span></span><br><span class="line">@property ( readonly,getter = port,setter = &lt;null selector,nonatomic ) NSNumber * port<span class="comment">;</span></span><br><span class="line">@property ( readonly,getter = user,setter = &lt;null selector,nonatomic ) NSString * user<span class="comment">;</span></span><br><span class="line">@property ( readonly,getter = password,setter = &lt;null selector,nonatomic ) NSString * password<span class="comment">;</span></span><br><span class="line">@property ( readonly,getter = path,setter = &lt;null selector,nonatomic ) NSString * path<span class="comment">;</span></span><br><span class="line">@property ( readonly,getter = fragment,setter = &lt;null selector,nonatomic ) NSString * fragment<span class="comment">;</span></span><br><span class="line">@property ( readonly,getter = parameterString,setter = &lt;null selector,nonatomic ) NSString * parameterString<span class="comment">;</span></span><br><span class="line">@property ( readonly,getter = query,setter = &lt;null selector,nonatomic ) NSString * query<span class="comment">;</span></span><br><span class="line">@property ( readonly,getter = relativePath,setter = &lt;null selector,nonatomic ) NSString * relativePath<span class="comment">;</span></span><br><span class="line">@property ( readonly,getter = fileSystemRepresentation,setter = &lt;null selector ) const char * fileSystemRepresentation<span class="comment">;</span></span><br><span class="line">@property ( readonly,getter = isFileURL,setter = &lt;null selector,readwrite ) BOOL fileURL<span class="comment">;</span></span><br><span class="line">@property ( readonly,getter = standardizedURL,setter = &lt;null selector,nonatomic ) NSURL * standardizedURL<span class="comment">;</span></span><br><span class="line">@property ( readonly,getter = filePathURL,setter = &lt;null selector,nonatomic ) NSURL * filePathURL<span class="comment">;</span></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
 <p>可以看到，输出结果中列出了NSURL的一些成员变量及属性信息。<br>image命令还有许多其它功能，具体可以参考<a href="https://developer.apple.com/library/mac/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-command-examples.html#//apple_ref/doc/uid/TP40012917-CH3-SW5" target="_blank" rel="external">Executable and Shared Library Query Commands</a>;</p>
 <p>LLDB 还有很多功能，暂时没有研究就记这么多吧！</p>
 <p>参考资料：</p>
@@ -140,30 +125,21 @@
 <ul>
 <li>初始化</li>
 </ul>
-<blockquote>
-<p>$: hexo init </p>
-</blockquote>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">$:</span> hexo init</span><br></pre></td></tr></table></figure>
 <p>如果指定 <folder>，便会在目前的资料夹建立一个名为 <folder> 的新资料夹；否则会在目前资料夹初始化。</folder></folder></p>
 <ul>
 <li>创建新博客</li>
 </ul>
-<blockquote>
-<p>$: hexo new “Hello World”</p>
-</blockquote>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">$:</span> hexo <span class="keyword">new</span> <span class="string">"Hello World"</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>生成网站</li>
 </ul>
-<blockquote>
-<p>$: hexo generate</p>
-</blockquote>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">$:</span> hexo generate</span><br></pre></td></tr></table></figure>
 <ul>
 <li>启动本地服务器</li>
 </ul>
-<blockquote>
-<p>$: hexo server</p>
-</blockquote>
-<p>伺服器会跑在 <a href="http://localhost:port" target="_blank" rel="external">http://localhost:port</a> （port 预设为 4000，可在 _config.yml 设定），也可以搭配 Pow 使用：<br>cd ~/.pow<br>ln -s /path/to/myapp</p>
-<p>基本使用差不多就是这样子，非常简单。</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">$:</span> hexo server</span><br></pre></td></tr></table></figure>
+<p>伺服器会跑在 <a href="http://localhost:port" target="_blank" rel="external">http://localhost:port</a> （port 预设为 4000，可在 _config.yml 设定），也可以搭配 Pow 使用：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~/.<span class="built_in">pow</span></span><br><span class="line"><span class="keyword">ln</span> -<span class="keyword">s</span> /path/<span class="keyword">to</span>/myapp</span><br></pre></td></tr></table></figure><br>基本使用差不多就是这样子，非常简单。</p>
 <hr>
 <h3 id="如果你想发布到github上呢">如果你想发布到github上呢</h3><ul>
 <li>先注册账号<br>账号相信你已经有了，登录 -&gt; 绑定ssh-key -&gt; 这里不说这些，<a href="http://blog.csdn.net/binyao02123202/article/details/20130891" target="_blank" rel="external">这里有</a></li>
@@ -176,15 +152,7 @@
     <span class="attribute">type</span>: git <span class="comment">// 不要写github,在3.0之后不允许写github了</span>
     <span class="attribute">repo</span>: <span class="comment">// 你的git库地址</span>
     <span class="attribute">branch</span>: <span class="comment">// 分支，一般直接使用默认的master分支</span>
-</code></pre><p>在配置好了这几个之后，还有一件很重要的事儿要做，那就是安装hexo专用git</p>
-<blockquote>
-<p>$ npm install hexo-deployer-git –save</p>
-</blockquote>
-<p>装好之后剩下的事儿就简单了，生成静态网站之后，执行：</p>
-<blockquote>
-<p>$ hexo deploy</p>
-</blockquote>
-<p>然后你就能看到你的博客了，user.github.io<br>就记这么多吧，足以使用了</p>
+</code></pre><p>在配置好了这几个之后，还有一件很重要的事儿要做，那就是安装hexo专用git<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure><br>装好之后剩下的事儿就简单了，生成静态网站之后，执行：<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo deploy</span><br></pre></td></tr></table></figure><br>然后你就能看到你的博客了，user.github.io<br>就记这么多吧，足以使用了</p>
 <hr>
 <h3 id="有了博客我要干什么">有了博客我要干什么</h3><ul>
 <li>发一些自己在开发中的心得体会</li>
@@ -269,7 +237,7 @@
 <h2 id="关于收费">关于收费</h2><p><strong>马克飞象</strong>为新用户提供 10 天的试用期，试用期过后需要<a href="maxiang.info/vip.html">续费</a>才能继续使用。未购买或者未及时续费，将不能同步新的笔记。之前保存过的笔记依然可以编辑。</p>
 <h2 id="反馈与建议">反馈与建议</h2><ul>
 <li>微博：<a href="http://weibo.com/u/2788354117" target="_blank" rel="external">@马克飞象</a>，<a href="http://weibo.com/ggock" title="开发者个人账号" target="_blank" rel="external">@GGock</a></li>
-<li>邮箱：<a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#x68;&#x75;&#x73;&#x74;&#x67;&#x6f;&#x63;&#x6b;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#x68;&#x75;&#x73;&#x74;&#x67;&#x6f;&#x63;&#x6b;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;</a></li>
+<li>邮箱：<a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#x68;&#x75;&#115;&#116;&#x67;&#111;&#99;&#107;&#64;&#103;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#109;">&#x68;&#x75;&#115;&#116;&#x67;&#111;&#99;&#107;&#64;&#103;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#109;</a></li>
 </ul>
 <hr>
 <p>感谢阅读这份帮助文档。请点击右上角，绑定印象笔记账号，开启全新的记录与分享体验吧。</p>

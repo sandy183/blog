@@ -69,12 +69,12 @@ markdown语法范例
 	    
 	      <a href="/categories">分类</a>
 	    
-	      <a href="/resume">关于我</a>
-	    
 	</div>
 	<div id="sub-nav" class="alignright">
 	    
 	      <a href="/atom.xml">订阅</a>
+	    
+	      <a href="/resume">关于我</a>
 	    
 	      <a href="/customization">留言</a>
 	    
@@ -119,30 +119,21 @@ markdown语法范例
 <ul>
 <li>初始化</li>
 </ul>
-<blockquote>
-<p>$: hexo init </p>
-</blockquote>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">$:</span> hexo init</span><br></pre></td></tr></table></figure>
 <p>如果指定 <folder>，便会在目前的资料夹建立一个名为 <folder> 的新资料夹；否则会在目前资料夹初始化。</folder></folder></p>
 <ul>
 <li>创建新博客</li>
 </ul>
-<blockquote>
-<p>$: hexo new “Hello World”</p>
-</blockquote>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">$:</span> hexo <span class="keyword">new</span> <span class="string">"Hello World"</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>生成网站</li>
 </ul>
-<blockquote>
-<p>$: hexo generate</p>
-</blockquote>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">$:</span> hexo generate</span><br></pre></td></tr></table></figure>
 <ul>
 <li>启动本地服务器</li>
 </ul>
-<blockquote>
-<p>$: hexo server</p>
-</blockquote>
-<p>伺服器会跑在 <a href="http://localhost:port" target="_blank" rel="external">http://localhost:port</a> （port 预设为 4000，可在 _config.yml 设定），也可以搭配 Pow 使用：<br>cd ~/.pow<br>ln -s /path/to/myapp</p>
-<p>基本使用差不多就是这样子，非常简单。</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">$:</span> hexo server</span><br></pre></td></tr></table></figure>
+<p>伺服器会跑在 <a href="http://localhost:port" target="_blank" rel="external">http://localhost:port</a> （port 预设为 4000，可在 _config.yml 设定），也可以搭配 Pow 使用：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~/.<span class="built_in">pow</span></span><br><span class="line"><span class="keyword">ln</span> -<span class="keyword">s</span> /path/<span class="keyword">to</span>/myapp</span><br></pre></td></tr></table></figure><br>基本使用差不多就是这样子，非常简单。</p>
 <hr>
 <h3 id="如果你想发布到github上呢">如果你想发布到github上呢</h3><ul>
 <li>先注册账号<br>账号相信你已经有了，登录 -&gt; 绑定ssh-key -&gt; 这里不说这些，<a href="http://blog.csdn.net/binyao02123202/article/details/20130891" target="_blank" rel="external">这里有</a></li>
@@ -155,15 +146,7 @@ markdown语法范例
     <span class="attribute">type</span>: git <span class="comment">// 不要写github,在3.0之后不允许写github了</span>
     <span class="attribute">repo</span>: <span class="comment">// 你的git库地址</span>
     <span class="attribute">branch</span>: <span class="comment">// 分支，一般直接使用默认的master分支</span>
-</code></pre><p>在配置好了这几个之后，还有一件很重要的事儿要做，那就是安装hexo专用git</p>
-<blockquote>
-<p>$ npm install hexo-deployer-git –save</p>
-</blockquote>
-<p>装好之后剩下的事儿就简单了，生成静态网站之后，执行：</p>
-<blockquote>
-<p>$ hexo deploy</p>
-</blockquote>
-<p>然后你就能看到你的博客了，user.github.io<br>就记这么多吧，足以使用了</p>
+</code></pre><p>在配置好了这几个之后，还有一件很重要的事儿要做，那就是安装hexo专用git<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure><br>装好之后剩下的事儿就简单了，生成静态网站之后，执行：<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo deploy</span><br></pre></td></tr></table></figure><br>然后你就能看到你的博客了，user.github.io<br>就记这么多吧，足以使用了</p>
 <hr>
 <h3 id="有了博客我要干什么">有了博客我要干什么</h3><ul>
 <li>发一些自己在开发中的心得体会</li>
@@ -248,7 +231,7 @@ markdown语法范例
 <h2 id="关于收费">关于收费</h2><p><strong>马克飞象</strong>为新用户提供 10 天的试用期，试用期过后需要<a href="maxiang.info/vip.html">续费</a>才能继续使用。未购买或者未及时续费，将不能同步新的笔记。之前保存过的笔记依然可以编辑。</p>
 <h2 id="反馈与建议">反馈与建议</h2><ul>
 <li>微博：<a href="http://weibo.com/u/2788354117" target="_blank" rel="external">@马克飞象</a>，<a href="http://weibo.com/ggock" title="开发者个人账号" target="_blank" rel="external">@GGock</a></li>
-<li>邮箱：<a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#x68;&#x75;&#x73;&#x74;&#x67;&#x6f;&#x63;&#x6b;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#x68;&#x75;&#x73;&#x74;&#x67;&#x6f;&#x63;&#x6b;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;</a></li>
+<li>邮箱：<a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#x68;&#x75;&#115;&#116;&#x67;&#111;&#99;&#107;&#64;&#103;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#109;">&#x68;&#x75;&#115;&#116;&#x67;&#111;&#99;&#107;&#64;&#103;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#109;</a></li>
 </ul>
 <hr>
 <p>感谢阅读这份帮助文档。请点击右上角，绑定印象笔记账号，开启全新的记录与分享体验吧。</p>
@@ -326,7 +309,7 @@ var duoshuoQuery = {short_name:"sajinwu"};
 
   <div class="widget tag">
     <h3 class="title">归档</h3>
-	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">2015年11月</a><span class="archive-list-count">2</span></li></ul>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">2015年11月</a><span class="archive-list-count">3</span></li></ul>
   </div>
 
   <div class="widget tag">
