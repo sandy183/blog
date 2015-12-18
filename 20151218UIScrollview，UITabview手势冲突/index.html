@@ -3,17 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>UIview属性 | 撒金武的博客</title>
+  <title>UIScrollview，UITabview手势冲突 | 撒金武的博客</title>
   <meta name="author" content="sandy">
   
-  <meta name="description" content="UIview的属性今天突然发现每次遇到View的内容填充问题时都需要上网去查，索性直接自己记下来，省的下次去查了
-UIViewContentMode的含义typedef NS_ENUM(NSInteger, UIViewContentMode) {
-    UIViewContentModeScal">
+  <meta name="description" content="问题前几天做一个界面，用一个UIScrollView里面装了4个UITableview，本来相安无事，但是点击任意一个cell进入下一级界面之后，在返回来的时候，就摊上大事儿了，UITabView不响应手势了，UIScrollView全权接管手势，满屏都可以滑动，这个问题困扰了我三天，我都打算换种做">
   
   
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
-  <meta property="og:title" content="UIview属性">
+  <meta property="og:title" content="UIScrollview，UITabview手势冲突">
   <meta property="og:site_name" content="撒金武的博客">
 
   
@@ -79,43 +77,24 @@ UIViewContentMode的含义typedef NS_ENUM(NSInteger, UIViewContentMode) {
   <div class="post-content">
     <header>
         <div class="icon"></div>
-        <time datetime="2015-11-25T07:31:00.000Z"><a href="/20151125UIview属性/">2015-11-25</a></time>
-        <h1 class="title">UIview属性</h1>
+        <time datetime="2015-12-18T07:08:10.000Z"><a href="/20151218UIScrollview，UITabview手势冲突/">2015-12-18</a></time>
+        <h1 class="title">UIScrollview，UITabview手势冲突</h1>
     </header>
     <div class="entry">
       
         <div id="toc" class="toc-article">
 	<div class="toc-title">目录</div>
-	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UIview的属性"><span class="toc-text">UIview的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#UIViewContentMode的含义"><span class="toc-text">UIViewContentMode的含义</span></a></li></ol></li></ol>
+	<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决"><span class="toc-text">解决</span></a></li></ol>
 </div>
       
-        <h1 id="UIview的属性">UIview的属性</h1><p>今天突然发现每次遇到View的内容填充问题时都需要上网去查，索性直接自己记下来，省的下次去查了</p>
-<h2 id="UIViewContentMode的含义">UIViewContentMode的含义</h2><pre><code><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, <span class="built_in">UIViewContentMode</span>) {
-    <span class="built_in">UIViewContentModeScaleToFill</span>,       <span class="comment">// 默认项，完全填充</span>
-    <span class="built_in">UIViewContentModeScaleAspectFit</span>,    <span class="comment">// 保持比例，以长边填满（不会溢出）</span>
-    <span class="built_in">UIViewContentModeScaleAspectFill</span>,   <span class="comment">// 保持比例，以短边填满（可能溢出）</span>
-    <span class="built_in">UIViewContentModeRedraw</span>,            <span class="comment">// 在调用了setNeedsDisplay方法之后会重绘</span>
-    <span class="built_in">UIViewContentModeCenter</span>,            <span class="comment">// 居中显示，大小不变</span>
-    <span class="built_in">UIViewContentModeTop</span>,               <span class="comment">// 靠上显示，大小不变</span>
-    <span class="built_in">UIViewContentModeBottom</span>,            <span class="comment">// 靠下显示，大小不变</span>
-       <span class="built_in">UIViewContentModeLeft</span>,           <span class="comment">// 靠左显示，大小不变 </span>
-    <span class="built_in">UIViewContentModeRight</span>,             <span class="comment">// 靠右显示，大小不变</span>
-    <span class="built_in">UIViewContentModeTopLeft</span>,           <span class="comment">// 左上显示，大小不变</span>
-    <span class="built_in">UIViewContentModeTopRight</span>,          <span class="comment">// 右上显示，大小不变</span>
-    <span class="built_in">UIViewContentModeBottomLeft</span>,        <span class="comment">// 左下显示，大小不变</span>
-    <span class="built_in">UIViewContentModeBottomRight</span>,       <span class="comment">// 右下显示，大小不变</span>
-};
-</code></pre><p>今天就记这么多吧，想起来再记</p>
+        <h2 id="问题">问题</h2><p>前几天做一个界面，用一个UIScrollView里面装了4个UITableview，本来相安无事，但是点击任意一个cell进入下一级界面之后，在返回来的时候，就摊上大事儿了，UITabView不响应手势了，UIScrollView全权接管手势，满屏都可以滑动，这个问题困扰了我三天，我都打算换种做法了，可是时间不允许啊。</p>
+<h2 id="解决">解决</h2><p>经过两天的战斗，和千万次的尝试，上百次的砸键盘，突然，一不小心，将UISCrollView的contentSize的高度减了100，卧槽，好了。就是这么简单，但是，这就TM的是个坑，至于为什么好了就不用解释了，但是之前我给UIScrollView设置的contentSize也没有大啊，为什么回来的时候他就变大了，无解。</p>
       
     </div>
     <footer>
 <!--        -->
-        <div class="categories">
-    <a href="/categories/开发/">开发</a>
-  </div>
-        <div class="tags">
-    <a href="/tags/UIview/">UIview</a>, <a href="/tags/iOS/">iOS</a>
-  </div>
+        
+        
         <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
   <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 <!--        -->
@@ -126,8 +105,8 @@ UIViewContentMode的含义typedef NS_ENUM(NSInteger, UIViewContentMode) {
 <section id="relate">
 	<script type="text/javascript" id="wumiiRelatedItems"></script>
 	<script type="text/javascript">
-	    var wumiiPermaLink = "http://sajinwu.github.io/20151125UIview属性/"; //请用代码生成文章永久的链接
-	    var wumiiTitle = "UIview属性"; //请用代码生成文章标题
+	    var wumiiPermaLink = "http://sajinwu.github.io/20151218UIScrollview，UITabview手势冲突/"; //请用代码生成文章永久的链接
+	    var wumiiTitle = "UIScrollview，UITabview手势冲突"; //请用代码生成文章标题
 	    var wumiiTags = "[object Object]"; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
 	    var wumiiCategories = "[object Object]"; //请用代码生成文章分类，分类名放在 JSONArray 	中，如: ["分类1", "分类2"]
 	    var wumiiSitePrefix = "http://sandy183.github.io/";
@@ -143,7 +122,7 @@ UIViewContentMode的含义typedef NS_ENUM(NSInteger, UIViewContentMode) {
 
 
     <!-- 多说评论框 start -->
-<div class="ds-thread" data-thread-key="20151125UIview属性/" data-title="UIview属性" data-url="http://sajinwu.github.io/20151125UIview属性/"></div>
+<div class="ds-thread" data-thread-key="20151218UIScrollview，UITabview手势冲突/" data-title="UIScrollview，UITabview手势冲突" data-url="http://sajinwu.github.io/20151218UIScrollview，UITabview手势冲突/"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
